@@ -1,0 +1,52 @@
+---
+// import * as L from "leaflet";
+const currentLocale = Astro.currentLocale;
+---
+
+<div id="contacto">
+  <div id="mapaconte">Aqui va  mapa
+    <div id="mapa"></div>
+  </div>
+</div>
+
+<style lang="scss">
+ @use "/src/estilos/variables.scss" as *;
+  #mapaconte {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    min-height: 60dvh;
+
+    #mapa {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+ 
+  
+</style>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+  crossorigin=""
+/>
+<script src="/js/leaflet.js" is:inline></script>
+<script is:inline>
+  var map = L.map("mapa").setView([17.64261, -101.55941], 15);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 27,
+  }).addTo(map);
+
+  L.marker([17.64261, -101.55941]) 
+    .addTo(map)
+    .bindPopup("Hotel Manglar Zihuatanejo")
+    .openPopup();
+
+  console.log(L);
+  //     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  // if (isMobile) {
+
+  //   map.dragging.disable();
+  // }
+  //     map.scrollWheelZoom.disable();
+</script>

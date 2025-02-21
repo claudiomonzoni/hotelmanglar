@@ -5,6 +5,12 @@ $acento: #8FB5A9;
 $gris: #3F3837;
 $fondo: #fef6ed;
 
+$naranja: #FF7139;
+$amarillo: #FFCA60;
+$azulmarino: #5251B0;
+$azul: #6DBEFF;
+$fondoamarillo: #FFEABF;
+
 
 //media query
 $cel: 479px;
@@ -60,6 +66,53 @@ $margen-top-cel: 6rem;
     @content;
   }
 }
+
+//layouts
+
+.grid {
+    display: grid;
+    grid-template-columns: [pantalla-start] 5vw [extra-start] 5vw [contenido-start] 1fr [contenido-end] 5vw [extra-end] 5vw [pantalla-end];
+    @include hd {
+      grid-template-columns: [pantalla-start] 2vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 2vw [pantalla-end];
+    }
+    @include hdplus {
+      grid-template-columns: [pantalla-start] 3vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 3vw [pantalla-end];
+    }
+  }
+  .contenido > * {
+    grid-column: contenido;
+    @include cel {
+      grid-column: pantalla;
+    }
+  }
+  .extra > * {
+    grid-column: extra;
+  }
+  .pantalla > * {
+    grid-column: pantalla;
+  }
+  .pantalla-izq > * {
+    grid-column: pantalla-start / contenido-end;
+    @include cel {
+      grid-column: pantalla;
+    }
+  }
+  .pantalla-der > * {
+    grid-column: contenido-start / pantalla-end;
+    // @include cel {
+    //   grid-column: pantalla;
+    // }
+  }
+  .pantalla-der-especial > * {
+    grid-column: contenido-start / pantalla-end;
+    @include cel {
+      grid-column: contenido / pantalla-end;
+    }
+  }
+  .pantalla-reservar > * {
+    grid-column: contenido;
+  }
+
 // animaciones 
 .anime{
   transition: all .2s ease-in-out;

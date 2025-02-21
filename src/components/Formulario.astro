@@ -1,0 +1,289 @@
+---
+const traduccion = {
+  en: [
+    {
+      encabezado: "Reservations",
+      texto:
+        "Contact us through the form, providing the necessary information to receive a personalized quote for your stay.",
+      fullname: "Full Name",
+      guests: "Number of guests",
+      checkin: "Check in date",
+      checkout: "Check out date",
+      send: "Request a reservation quote",
+    },
+  ],
+  es: [
+    {
+      encabezado: "Reservaciones",
+      texto:
+        "Contáctanos por medio del formulario, estarás enviándonos los datos necesarios para hacerte llegar  el presupuesto de tu estancia.",
+      fullname: "Nombre completo",
+      guests: "Numero de huespedes",
+      checkin: "Fecha de llegada",
+      checkout: "Fecha de salida",
+      send: "Solcitar un presupuesto",
+    },
+  ],
+};
+import Anchor from "./Anchor.astro";
+
+// const {lang} = Astro.props;
+const lang = Astro.props.lang as "en" | "es";
+---
+
+<div id="reservations">
+  <img src="/racimo.webp" alt="racimo de cocos" id="racimo" />
+  <div class="grid contenido">
+    <div id="reserva">
+      <div id="bandeja">
+        <h2>{traduccion[lang][0].encabezado}</h2>
+        <p>
+          {traduccion[lang][0].texto}
+        </p>
+
+        <form>
+          <label for="name"
+            >{traduccion[lang][0].fullname}
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder={traduccion[lang][0].fullname}
+            />
+          </label>
+
+          <label for="guests"
+            >{traduccion[lang][0].guests}
+            <input
+              type="number"
+              name="guests"
+              id="guests"
+              required
+              placeholder={traduccion[lang][0].guests}
+            />
+          </label>
+
+          <label for="checkin"
+            >{traduccion[lang][0].checkin}
+            <input
+              type="date"
+              name="checkin"
+              required
+              id="check-in"
+              placeholder="Check-in date*"
+            />
+          </label>
+
+          <label for="checkout"
+            >{traduccion[lang][0].checkout}
+            <input
+              type="date"
+              name="checkout"
+              id="check-out"
+              placeholder="Check-out date*"
+            />
+          </label>
+          <label for="email"
+            >Email
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email*"
+            />
+          </label>
+          <!-- <button type="submit"  id="contactoBtn" >Get in touch</button> -->
+          <Anchor
+            url="#"
+            clase="btn oscuro desactivado"
+            texto={traduccion[lang][0].send}
+            id="contactoBtn"
+          />
+        </form>
+        <div id="msj"></div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<style lang="scss">
+ @use "/src/estilos/variables.scss" as *;
+
+  #reserva {
+    // min-height: 0dvh;
+    padding: $margen $margen 20dvh $margen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend .sombra;
+    background: $fondo;
+
+    @include cel {
+      text-align: center;
+      margin: 0 1.5rem;
+      padding: $margen-cel $margen-cel 20dvh $margen-cel;
+    }
+  }
+  #bandeja {
+    width: 60%;
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: $margen-cel;
+    }
+    label {
+      flex: 1 0 100%;
+      margin-bottom: 0.7rem;
+      color: $secundario;
+      font-weight: bold;
+    }
+    input {
+      border-radius: 0.3rem;
+      color: white;
+      width: 100%;
+      border: none;
+      background: $gris;
+      padding: 0.7rem 0.5rem;
+      font-size: clamp(1rem, 1rem, 1rem);
+    }
+    input::placeholder {
+      color: white;
+      font-size: clamp(1rem, 1rem, 1rem);
+    }
+    input:-ms-input-placeholder {
+      color: white;
+    }
+    input::-moz-placeholder {
+      color: white;
+    }
+    @include cel {
+      width: 90%;
+    }
+  }
+  #reservations {
+    position: relative;
+    padding-bottom: 42dvh;
+    background: url("../assets/nubes.png") repeat-x;
+    background-position: left 70%;
+    background-size: contain;
+    #cerro {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    #racimo {
+      position: absolute;
+      top: -20vh;
+      right: 0;
+      width: 30vw;
+      max-width: 400px;
+      @include cel {
+        width: 40vw;
+      }
+      @include tableta_land {
+        width: 20vw;
+      }
+    }
+
+    @include cel {
+      background-position: left 90%;
+      padding-bottom: 0dvh;
+    }
+    @include tableta {
+      background-position: left 90%;
+      padding-bottom: 7dvh;
+    }
+    @include tableta_land {
+      background-position: left 90%;
+      padding-bottom: 26dvh;
+    }
+  }
+</style>
+
+<script>
+  const name = document.getElementById("name") as HTMLInputElement;
+  const guests = document.getElementById("guests") as HTMLInputElement;
+  const checkin = document.getElementById("check-in") as HTMLInputElement;
+  const checkout = document.getElementById("check-out") as HTMLInputElement;
+  const email = document.getElementById("email") as HTMLInputElement;
+  const empezar = document.getElementById("contactoBtn") as HTMLAnchorElement;
+  const numeroWhats = 4431366979;
+
+  console.log(window.location.pathname + ' location');
+
+  //user agent
+  const ua = navigator.userAgent;
+
+  //si es cel app si es pc web.app
+  const enviar = (e: Event) => {
+    e.preventDefault();
+
+    if (
+      name.value === "" ||
+      guests.value === "" ||
+      checkin.value === "" ||
+      checkout.value === "" ||
+      email.value === ""
+    ) {
+      console.log("vacio");
+    } else {
+      empezar.classList.remove("desactivado");
+    }
+    //comprobar si es cel o pc
+    let whats = "";
+    if (/Mobile/i.test(ua)) {
+      whats = `https://api.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+    } else {
+      whats = `https://web.whatsapp.com/send/?phone=${numeroWhats}&text=`;
+    }
+
+    envio(
+      whats,
+      name.value,
+      guests.value,
+      checkin.value,
+      checkout.value,
+      email.value
+    );
+  };
+
+  const envio = (
+    whats: string,
+    name: string,
+    guests: any,
+    checkin: any,
+    checkout: any,
+    email: string
+  ) => {
+    const url = `
+  ${whats}Full%20Name:%20${name}%0aGuests:%20${guests}%0aCheck-in:%20${checkin}%0aCheck-out:%20${checkout}%0aEmail:%20${email}%0aComments:%20
+  `;
+    const urlEs = `
+  ${whats}Nombre%20Completo:%20${name}%0aHuespedes:%20${guests}%0aIngreso:%20${checkin}%0aSalida:%20${checkout}%0aEmail:%20${email}%0aComentarios:%20
+  `;
+
+  if (window.location.pathname === "/") {
+    empezar.href = url;
+  } else {
+    empezar.href = urlEs;
+  }
+
+    // empezar.href = url;
+  };
+
+  name.addEventListener("focusout", enviar);
+  guests.addEventListener("focusout", enviar);
+  checkin.addEventListener("focusout", enviar);
+  checkout.addEventListener("focusout", enviar);
+  email.addEventListener("focusout", enviar);
+</script>
