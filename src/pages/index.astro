@@ -1,17 +1,52 @@
 ---
-import Contacto from '../components/Contacto.astro';
-import Layout from '../layouts/Layout.astro';
-import Formulario from '../components/Formulario.astro';
+import Contacto from "../components/Contacto.astro";
+import Layout from "../layouts/Layout.astro";
+import Formulario from "../components/Formulario.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title='Hotel Manglar Zihuatanejo'>
-	<main>	
-		<h1>Hotel Manglar Zihuatanejo</h1>
-	</main>
-
-	<Contacto />
-	<Formulario lang="es" />
+<Layout title="Hotel Manglar Zihuatanejo">
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">habitaciones</a>
+    <a href="#">reservaciones</a>
+    <a href="#">amenidades</a>
+    <a href="#">contacto</a>
+  </nav>
+  <div id="hero">
+    <div class="izq">
+      <img
+        src="/cover-hotel-manglar-zihuatanejo.webp"
+        alt="hotel manglar zihuatanejo"
+      />
+    </div>
+    <div class="der">
+      <div class="bandeja">
+        <div class="conte">
+          <img
+            src="/hotel-manglar-zihuatanejo.svg"
+            alt="Hotel Manglar Zihuatanejo logo"
+          />
+          <h1>Tu descanso en el corazón de Zihuatanejo</h1>
+        </div>
+      </div>
+      <div class="bandeja">
+        <div class="conte">
+          <h2>
+            Cómodo, bien ubicado y con una excelente relación calidad-precio
+          </h2>
+          <p>
+            <b>Hotel Manglar Zihuatanejo</b> es una opción ideal. Nos encontramos
+            en el centro de Zihuatanejo, a solo unas cuadras de la bahía, con fácil
+            acceso a restaurantes, mercados y atractivos turísticos. Somos una gran
+            <b>opcion para viajeros y grupos</b> en tours organizados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Contacto />
+  <Formulario lang="es" />
 </Layout>
