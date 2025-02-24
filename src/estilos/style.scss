@@ -139,6 +139,9 @@ p, h1{
     }
     .der{
       flex: 1 0 100%;
+     .conte{
+      padding: 4rem 0;
+     }
       img{
         max-width: 200px;
       }
@@ -161,6 +164,7 @@ p, h1{
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
   transform: translateY(-1em);
+  z-index: 200;
   ul{
     margin: .8rem 0;
   }
@@ -210,6 +214,7 @@ p, h1{
    grid-template-columns: 1fr;
    background-position: 300% 80%;
    background-size: 90% auto;
+   
    .conte{
     padding-top: 5rem;
     width: 80%;
@@ -220,4 +225,60 @@ p, h1{
     height: 110%;
   }
   }
+}
+
+#habitaciones{
+  transform: translateY(-2rem);
+  background: $amarillo;
+  text-align: center;
+  padding: 14dvh 0;
+  h2{
+    color: $azulmarino;
+    padding: 0 2rem ;
+  }
+  p{
+    padding: 2rem ;
+  }
+  #riel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: .5rem;
+    overflow-x: auto;
+    overscroll-behavior-inline:contain;
+    padding: 0 1rem;
+    @include cel{
+      grid-auto-columns: 80%;
+    }
+  }
+  .habitacion{
+    background: $fondoamarillo;
+    border-radius: 1em;
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3{
+      color: $naranja;
+      padding-top: 1.5rem;
+      font-size:clamp(2rem, 2.5vw, 3rem);
+    }
+    p{
+      padding: 1rem 0;
+    }
+  img{
+    width: 100%;
+    border-radius: .7em;
+  }
+}
+span{
+  font-weight: bold;
+  text-shadow: 4px 4px 3px rgba(108, 103, 66, 0.3);
+  color: $azulmarino;
+}
+.maximo{
+  border-top: solid 1px $azulmarino;
+  padding: 1rem 0;
+  margin-top:1rem;
+}
 }
