@@ -2,6 +2,7 @@
 import Contacto from "../components/Contacto.astro";
 import Layout from "../layouts/Layout.astro";
 import Formulario from "../components/Formulario.astro";
+import Anchor from "../components/Anchor.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -69,7 +70,7 @@ import Formulario from "../components/Formulario.astro";
             >, ideal para refrescarse y relajarse después de un día explorando
             Zihuatanejo.
           </p>
-          <a href="#" class="btn-claro"> Ver habitaciones</a>
+          <Anchor url="#" clase="oscuro" texto="Ver habitaciones" />
         </div>
       </div>
       <div class="der">
@@ -101,7 +102,7 @@ import Formulario from "../components/Formulario.astro";
             >cama king size</b
           >, aire acondicionado, baño privado, TV y wifi.
         </p>
-        <a href="#" class="btn-claro">Reserar ahora</a>
+        <Anchor url="#reservaciones" clase="oscuro reservar" texto="Reservar habitación" />
         <div class="maximo">
           <b>Máxiomo</b> 2 personas
         </div>
@@ -118,7 +119,7 @@ import Formulario from "../components/Formulario.astro";
             >cama matrimonial y 1 individual</b
           >, aire acondicionado, TV y baño privado.
         </p>
-        <a href="#" class="btn-claro">Reserar ahora</a>
+        <Anchor url="#reservaciones" clase="oscuro reservar" texto="Reservar habitación" />
         <div class="maximo">
           <b>Máxiomo</b> 3 personas
         </div>
@@ -135,7 +136,7 @@ import Formulario from "../components/Formulario.astro";
             >dos camas matrimoniales</b
           >, aire acondicionado, TV y baño privado.
         </p>
-        <a href="#" class="btn-claro">Reserar ahora</a>
+        <Anchor url="#reservaciones" clase="oscuro reservar" texto="Reservar habitación" />
         <div class="maximo">
           <b>Máxiomo</b> 4 personas
         </div>
@@ -152,13 +153,61 @@ import Formulario from "../components/Formulario.astro";
             >tres camas matrimoniales</b
           >, aire acondicionado, TV y baño privado.
         </p>
-        <a href="#" class="btn-claro">Reserar ahora</a>
+        <Anchor url="#reservaciones" clase="oscuro reservar" texto="Reservar habitación" />
         <div class="maximo">
           <b>Máxiomo</b> 6 personas
         </div>
       </div>
     </div>
   </section>
+
+  <section id="amenidades" class="grid contenido">
+    <h2>Servicios y Amenidades</h2>
+    <p>Obtén una estancia comoda y confortable en Hotel Manglar Zihuatanejo</p>
+    <div class="bandeja">
+      <img class="guardian" src="/cocina.jpg" alt="cocina hotel manglar zihuatanejo" />
+      <div id="lista-servicios">
+        <div class="servicio">
+          <img src="cocina-ico.svg" alt="cocina hotel manglar zihuatanejo" />
+          <h3>Cocina</h3>
+          <p>Contamos con una <b>cocina</b> de uso común para tu comodidad.</p>
+        </div>
+        <div class="servicio">
+          <img src="/alberca-ico.svg" alt="albercal hotel manglar zihuatanejo" />
+          <h3>Alberca</h3>
+        <p>Disfruta de una <b>alberca con chapoteadero</b></p>
+        </div>
+        <div class="servicio">
+          <img src="/limpieza-ico.svg" alt="limpieza hotel manglar zihuatanejo" />
+          <h3>Limpieza</h3>
+          <p><b>Aseamos</b> diario tu habitación.</p>
+        </div>
+        <div class="servicio">
+          <img src="/internet-ico.svg" alt="internet hotel manglar zihuatanejo" />
+          <h3>Internet</h3>
+          <p>Internet <b>gratuito</b> en tu habitación</p>
+        </div>
+        <div class="servicio">
+          <img src="/tv-ico.svg" alt="tv con cable hotel manglar zihuatanejo" />
+          <h3>T.V Cable</h3>
+          <p><b>Entretente</b> mientas descansas</p>
+        </div>
+        <div class="servicio">
+          <img src="/agua-ico.svg" alt="agua caliente hotel manglar zihuatanejo" />
+          <h3>Agua caliente</h3>
+          <p>Regula la temperatura mientras disfrutas de un relajante baño</p>
+        </div>
+      </div>
+      <img class="guardian" src="/alberca-servicios.jpg" alt="alberca hotel manglar zihuatanejo" />
+    </div>
+  </section>
   <Contacto />
+  <section id="reservaciones">
+    <h2>Reserva tu habitación en Hotel Manglar Zihuatanejo</h2>
+    <p>
+      Completa el siguiente formulario para reservar tu habitación. Nos pondremos
+      en contacto contigo para confirmar tu estancia.
+    </p>
   <Formulario lang="es" />
+  </section>
 </Layout>

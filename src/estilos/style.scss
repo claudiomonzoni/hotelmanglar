@@ -98,6 +98,8 @@ nav{
 #hero{
   display: flex;
   text-align: center;
+  width: 100%;
+  
   h2{
     color: $azulmarino;
   }
@@ -195,7 +197,7 @@ p, h1{
     }
     img{
       border-radius: 1em;
-      aspect-ratio: 1/1;
+      aspect-ratio: 5/4;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -282,3 +284,53 @@ span{
   margin-top:1rem;
 }
 }
+  #amenidades{
+    text-align: center;
+    padding: 14dvh 0;
+    h2{
+      color: $naranja;
+    }
+    p{
+      padding: 2rem ;
+    }
+    .bandeja{
+      display: grid;
+      grid-template-columns:15% 1fr 15%;
+      gap: .5rem;
+      .guardian{
+        width: 100%;
+        height: 100%;
+        border-radius: 1em;
+        object-fit: cover;
+      }
+      @include cel{
+        grid-template-columns: 1fr;
+      } 
+    }
+    #lista-servicios{
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      .servicio{
+        flex: 1 0 30%;
+        padding: 2rem;
+        background:$azulmarino;
+        color: white;
+        border-radius: 1em;
+        h3{
+          color: $naranja;
+          padding: 1rem;
+          font-size:clamp(2rem, 1.8vw, 3rem);
+        }
+        p{
+          padding: 0rem;
+        }
+      }
+      @include cel{
+        padding: 2rem;
+        .servicio{
+          flex: 1 0 10%;
+        }
+      }
+    }
+  }

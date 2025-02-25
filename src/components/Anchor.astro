@@ -1,46 +1,54 @@
 ---
 interface Props {
-    id?: string;
-    url: string;
-    clase: string;
-    texto: string;
+  id?: string;
+  url: string;
+  clase: string;
+  texto: string;
 }
 
 const { url, clase, texto, ...rest } = Astro.props;
 ---
 
-<a href={url} class:list={[clase]} {...rest} set:html={texto} {...rest}></a>
+<a href={url} class:list={[clase,  'btn']} {...rest} set:html={texto} {...rest} />
 
 <style lang="scss">
-	 @use "/src/estilos/variables.scss" as *;
-	@mixin anchor{
-        display: inline-block;
-		padding: .5rem $margen-cel;
-		text-align: center;
-        max-width: fit-content;
-        @extend .anime;
-	}
-	
-    .btn{
-        @include anchor;
-    }
-    .claro{
-        border: solid 1px $acento;
-        &:hover{
-            color: white;
-            background: $acento;
-            @extend .sombra;
-        }
-    }
-    .oscuro{
-        border: none;
-        background: $secundario;
-        color: white;
-        &:hover{
-            color: white;
-            background: $acento;
-            @extend .sombra;
-        }
-    }
+  @use "/src/estilos/variables.scss" as *;
 
+  @mixin anchor {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    max-width: fit-content;
+    border-radius: .9rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    @extend .anime;
+  }
+
+  .btn {
+    @include anchor;
+  }
+  .claro {
+    border: solid 1px $acento;
+    background: $azulmarino;
+    color: white;
+    &:hover {
+        color: $azulmarino;
+      background: $fondoamarillo;
+      @extend .sombra;
+    }
+  }
+  .reservar{
+    margin: 0 auto;
+  }
+  .oscuro {
+    border: none;
+    background: $amarillo;
+    color: $azulmarino;
+    &:hover {
+      color: white;
+      background: $azul;
+      @extend .sombra;
+    }
+  }
 </style>
