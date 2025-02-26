@@ -99,9 +99,9 @@ $margen-top-cel: 6rem;
   }
   .pantalla-der > * {
     grid-column: contenido-start / pantalla-end;
-    // @include cel {
-    //   grid-column: pantalla;
-    // }
+    @include cel {
+      grid-column: pantalla;
+    }
   }
   .pantalla-der-especial > * {
     grid-column: contenido-start / pantalla-end;

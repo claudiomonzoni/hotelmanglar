@@ -2,7 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat+Alternates:wght@300;400;500;600;700&display=swap");
 
-
 html {
   box-sizing: border-box;
   font-size: clamp(10px, 0.9vw, 22px);
@@ -92,71 +91,72 @@ a {
   display: inline-block;
   color: $primario;
 }
-nav{
-  display:none;
+nav {
+  display: none;
 }
-#hero{
+#hero {
   display: flex;
   text-align: center;
   width: 100%;
-  
-  h2{
+
+  h2 {
     color: $azulmarino;
   }
-  .izq{
+  .izq {
     flex: 1 0 50%;
-    img{
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
-  .der{
+  .der {
     flex: 1 0 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:stretch;
-    .bandeja:last-child{
+    align-items: stretch;
+    .bandeja:last-child {
       background: $fondoamarillo;
     }
   }
-  .bandeja{
+  .bandeja {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex: 1 0 100%;
   }
-  .conte{
+  .conte {
     width: 80%;
   }
-p, h1{
-  margin-top: 1rem;
-}
-  @include cel{
+  p,
+  h1 {
+    margin-top: 1rem;
+  }
+  @include cel {
     flex-wrap: wrap;
-    .izq{
+    .izq {
       flex: 1 0 100%;
     }
-    .der{
+    .der {
       flex: 1 0 100%;
-     .conte{
-      padding: 4rem 0;
-     }
-      img{
+      .conte {
+        padding: 4rem 0;
+      }
+      img {
         max-width: 200px;
       }
     }
-    .bandeja{
+    .bandeja {
       padding: 2rem;
       flex: 1 0 100%;
     }
   }
 }
 
-#intro{
-  background: url(/palma.png),  $azulmarino;
+#intro {
+  background: url(/palma.png), $azulmarino;
   background-repeat: no-repeat;
   background-position: -27% center;
   background-size: 40% auto;
@@ -167,170 +167,222 @@ p, h1{
   border-bottom-right-radius: 1em;
   transform: translateY(-1em);
   z-index: 200;
-  ul{
-    margin: .8rem 0;
+  ul {
+    margin: 0.8rem 0;
   }
-  h2{
+  h2 {
     color: $amarillo;
   }
-  b{
+  b {
     color: $amarillo;
   }
-  
-  .izq , .der{
+
+  .izq,
+  .der {
     flex: 1 0 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .conte{
+  .conte {
     width: 60%;
     transform: translateX(7rem);
   }
-  .der{
-    .conte{
+  .der {
+    .conte {
       display: grid;
       grid-template-columns: 1fr 20% 1fr;
       grid-template-rows: 1fr 20% 1fr;
       width: 90%;
       height: 80%;
     }
-    img{
+    img {
       border-radius: 1em;
       aspect-ratio: 5/4;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    img:first-child{
+    img:first-child {
       grid-column: 1 / 3;
-      grid-row: 1 / 3;  
+      grid-row: 1 / 3;
     }
-    img:nth-child(2){
-      grid-column:2/ -1;
+    img:nth-child(2) {
+      grid-column: 2/ -1;
       grid-row: 2 / -1;
     }
-  
   }
-  @include cel{
-   grid-template-columns: 1fr;
-   background-position: 300% 80%;
-   background-size: 90% auto;
-   
-   .conte{
-    padding-top: 5rem;
-    width: 80%;
-    transform: translateX(0rem);
-  }
-  .der .conte{
-    width: 90%;
-    height: 110%;
-  }
+  @include cel {
+    grid-template-columns: 1fr;
+    background-position: 300% 80%;
+    background-size: 90% auto;
+
+    .conte {
+      padding-top: 5rem;
+      width: 80%;
+      transform: translateX(0rem);
+    }
+    .der .conte {
+      width: 90%;
+      height: 110%;
+    }
   }
 }
 
-#habitaciones{
+#habitaciones {
   transform: translateY(-2rem);
   background: $amarillo;
   text-align: center;
   padding: 14dvh 0;
-  h2{
+  h2 {
     color: $azulmarino;
-    padding: 0 2rem ;
+    padding: 0 2rem;
   }
-  p{
-    padding: 2rem ;
+  p {
+    padding: 2rem;
   }
-  #riel{
+  #riel {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    gap: .5rem;
+    gap: 0.5rem;
     overflow-x: auto;
-    overscroll-behavior-inline:contain;
+    overscroll-behavior-inline: contain;
     padding: 0 1rem;
-    @include cel{
+    @include cel {
       grid-auto-columns: 80%;
     }
   }
-  .habitacion{
+  .habitacion {
     background: $fondoamarillo;
     border-radius: 1em;
     padding: 1rem 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    h3{
+    h3 {
       color: $naranja;
       padding-top: 1.5rem;
-      font-size:clamp(2rem, 2.5vw, 3rem);
+      font-size: clamp(2rem, 2.5vw, 3rem);
     }
-    p{
+    p {
       padding: 1rem 0;
     }
-  img{
-    width: 100%;
-    border-radius: .7em;
+    img {
+      width: 100%;
+      border-radius: 0.7em;
+    }
+  }
+  span {
+    font-weight: bold;
+    text-shadow: 4px 4px 3px rgba(108, 103, 66, 0.3);
+    color: $azulmarino;
+  }
+  .maximo {
+    border-top: solid 1px $azulmarino;
+    padding: 1rem 0;
+    margin-top: 1rem;
   }
 }
-span{
-  font-weight: bold;
-  text-shadow: 4px 4px 3px rgba(108, 103, 66, 0.3);
-  color: $azulmarino;
-}
-.maximo{
-  border-top: solid 1px $azulmarino;
-  padding: 1rem 0;
-  margin-top:1rem;
-}
-}
-  #amenidades{
-    text-align: center;
-    padding: 14dvh 0;
-    h2{
-      color: $naranja;
+#amenidades {
+  text-align: center;
+  padding: 14dvh 0;
+  h2 {
+    color: $naranja;
+  }
+  p {
+    padding: 2rem;
+  }
+  .bandeja {
+    display: grid;
+    grid-template-columns: 15% 1fr 15%;
+    gap: 0.5rem;
+    .guardian {
+      width: 100%;
+      height: 100%;
+      border-radius: 1em;
+      object-fit: cover;
     }
-    p{
-      padding: 2rem ;
+    @include cel {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
     }
-    .bandeja{
-      display: grid;
-      grid-template-columns:15% 1fr 15%;
-      gap: .5rem;
-      .guardian{
-        width: 100%;
-        height: 100%;
-        border-radius: 1em;
-        object-fit: cover;
-      }
-      @include cel{
-        grid-template-columns: 1fr;
-      } 
-    }
-    #lista-servicios{
+  }
+  #lista-servicios {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    .servicio {
       display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-      .servicio{
-        flex: 1 0 30%;
-        padding: 2rem;
-        background:$azulmarino;
-        color: white;
-        border-radius: 1em;
-        h3{
-          color: $naranja;
-          padding: 1rem;
-          font-size:clamp(2rem, 1.8vw, 3rem);
-        }
-        p{
-          padding: 0rem;
-        }
+      flex-direction: column;
+      flex: 1 0 30%;
+      padding: 2rem;
+      background: $azulmarino;
+      color: white;
+      border-radius: 1em;
+      img {
+        width: clamp(50px, 3rem, 200px);
+        height: auto;
+        margin: 0 auto;
       }
-      @include cel{
-        padding: 2rem;
-        .servicio{
-          flex: 1 0 10%;
-        }
+      h3 {
+        color: $naranja;
+        padding: 1rem;
+        font-size: clamp(1.4rem, 1.8vw, 3rem);
+      }
+      p {
+        padding: 0rem;
+      }
+    }
+    @include cel {
+      .servicio {
+        flex: 1 0 40%;
+        justify-content: center;
       }
     }
   }
+}
+
+#descubre {
+  display: flex;
+  background: $azulmarino;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  .izq,
+  .der {
+    flex: 1 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  h2 {
+    color: $naranja;
+  }
+  p {
+    padding-top: 1rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .conte {
+    width: 70%;
+  }
+
+  @include cel {
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 1rem;
+    .izq{
+      padding: 4rem 0;
+    }
+    .izq,
+    .der {
+      flex: 1 0 100%;
+    }
+  }
+}
