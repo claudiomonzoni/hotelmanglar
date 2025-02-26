@@ -71,6 +71,7 @@ $margen-top-cel: 6rem;
 
 .grid {
     display: grid;
+    position: relative;
     grid-template-columns: [pantalla-start] 5vw [extra-start] 5vw [contenido-start] 1fr [contenido-end] 5vw [extra-end] 5vw [pantalla-end];
     @include hd {
       grid-template-columns: [pantalla-start] 2vw [extra-start] 6vw [contenido-start] 1fr [contenido-end] 6vw [extra-end] 2vw [pantalla-end];

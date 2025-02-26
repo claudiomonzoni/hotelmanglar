@@ -1,0 +1,74 @@
+---
+---
+
+<footer >
+    <div class="izq">
+        <img src="/hotel-manglar-zihuatanejo-footer.svg" alt="hotel manglar zihuatanejo">
+    </div>
+    <div class="der">
+        <ul>
+            <li><a href="tel:4431366979" class="numero">443 136.6979</a></li>
+            <li><a href="tel:75512572552" class="numero">755 125.72552</a></li>
+            <li><address>Av. Cuauhtémoc 5, Centro, 40890 Zihuatanejo, Gro.</address></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100094567287786" target="_blank">Siguenos en facebook</a></li>
+        </ul>
+
+        <small>© <span id="anio"></span> Hotel Manglar Zihuatanejo. Todos los derechos reservados.</small>
+    </div>
+</footer>
+
+
+<style lang="scss">
+    @use "/src/estilos/variables.scss" as *;
+    
+    footer {
+        display: flex;
+        background-color: $azulmarino;
+        color: #fff;
+        text-align: center;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+    .numero{
+        font-weight: bold;
+        font-size: clamp(1rem, 1.7rem, 2.2rem);
+    }
+    a{
+        color: $fondoamarillo;
+    }
+    li{
+        padding: 0;
+        list-style: none;
+        margin: 0rem 0rem 0.3rem 0rem;
+    }
+    .izq{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 40%;
+        padding: 2rem;
+    }
+    .der{
+        border-radius: 1rem;
+        flex: 1 0 60%;
+        padding: 2rem;
+        background:$naranja;
+        text-align: left;
+    }
+    @include cel {
+        footer{
+            flex-wrap: wrap;
+            margin: 2rem;
+            .izq, .der{
+                flex: 1 0 100%;
+            }
+        }
+        }
+</style>
+
+<script>
+    const anio = document.getElementById("anio");
+    if (anio) {
+        anio.textContent = new Date().getFullYear().toString();
+    }
+</script>

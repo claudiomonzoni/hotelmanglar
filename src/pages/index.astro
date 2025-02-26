@@ -3,6 +3,7 @@ import Contacto from "../components/Contacto.astro";
 import Layout from "../layouts/Layout.astro";
 import Formulario from "../components/Formulario.astro";
 import Anchor from "../components/Anchor.astro";
+import Footer from "../components/Footer.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -70,7 +71,7 @@ import Anchor from "../components/Anchor.astro";
             >, ideal para refrescarse y relajarse después de un día explorando
             Zihuatanejo.
           </p>
-          <Anchor url="#" clase="oscuro" texto="Ver habitaciones" />
+          <Anchor url="#habitaciones" clase="oscuro" texto="Ver habitaciones" />
         </div>
       </div>
       <div class="der">
@@ -238,7 +239,8 @@ import Anchor from "../components/Anchor.astro";
     </div>
   </section>
   <section class="grid pantalla-der">
-    <div id="descubre">
+    <img src="/palma-2-hotel-manglar-zihua.jpg" alt="decoracion palma" id="palma">
+    <div id="descubre" class="barras">
       <div class="izq">
         <div class="conte">
           <h2>Descubre Ixtapa Zihuatanejo</h2>
@@ -265,13 +267,74 @@ import Anchor from "../components/Anchor.astro";
       </div>
     </div>
   </section>
-  <Contacto />
-  <section id="reservaciones">
-    <h2>Reserva tu habitación en Hotel Manglar Zihuatanejo</h2>
-    <p>
-      Completa el siguiente formulario para reservar tu habitación. Nos
-      pondremos en contacto contigo para confirmar tu estancia.
-    </p>
-    <Formulario lang="es" />
+  <section class="grid pantalla-izq">
+    <div id="grupos" class="barras">
+      <div class="izq">
+        <div class="conte">
+          <h2>Viajas en grupo? ¡Te recibimos!</h2>
+          <p>
+            Si formas parte de un <b>tour en autobús o grupo de turistas</b>,
+            Hotel Manglar Zihuatanejo es una excelente opción. Contamos con
+            tarifas especiales, comodidades para grupos y estamos a unos pasos
+            del estacionamiento oficial del municipio para autobuses turísticos.
+          </p>
+          <p>
+            <b>Descubre Zihuatanejo</b> con todo lo que necesitas para una estancia
+            cómoda. Contáctanos y asegura tu habitación al mejor precio.
+          </p>
+          <Anchor
+            url="#reservaciones"
+            clase="oscuro"
+            texto="Reservar para grupos"
+          />
+        </div>
+      </div>
+      <div class="der">
+        <img src="/bus.png" alt="Grupo de turistas en Zihuatanejo" />
+      </div>
+    </div>
   </section>
+  <section class="grid pantalla-der">
+    <img src="/cocos.png" alt="decoracion cocos" id="cocos">
+    <div id="contacto" class="barras">
+      <div class="izq">
+        <div class="conte">
+          <h2>Contáctanos y reserva tu estancia</h2>
+          <p>
+            <b>¿Listo para disfrutar de Zihuatanejo?</b> En Hotel Manglar Zihuatanejo
+            estamos listos para recibirte. Ya sea que viajes en pareja, con amigos,
+            en familia o en grupo, tenemos la opción ideal para ti.
+          </p>
+          <ul>
+            <li>
+              <b>Escríbenos por WhatsApp</b> con tus fechas y te cotizamos sin
+              compromiso.
+            </li>
+            <li><b>Encuéntranos fácilmente</b> en el mapa y planea tu llegada.</li>
+          </ul>
+          <Anchor
+            url="#reservaciones"
+            clase="claro"
+            texto="Reserva ahora"
+          />
+        </div>
+      </div>
+      <div class="der">
+        <Contacto />
+      </div>
+    </div>
+  </section>
+
+  <section id="reservaciones" class="barras">
+    <div class="izq">
+      <img id="flor" src="/flor.png" alt="decoracion" />
+      <img src="/reservaciones.jpg" alt="reserve su habitacion en Hotel Manglar Zihuatanejo" />
+    </div>
+    <div class="der">
+      <Formulario lang="es" />
+    </div>
+  </section>
+  <div class="grid contenido">
+    <Footer />
+  </div>
 </Layout>

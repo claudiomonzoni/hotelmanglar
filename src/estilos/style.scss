@@ -341,13 +341,14 @@ nav {
       }
     }
   }
+  @include cel {
+    padding: 7dvh 0;
+  }
+
 }
 
-#descubre {
+.barras {
   display: flex;
-  background: $azulmarino;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
   .izq,
   .der {
     flex: 1 0 50%;
@@ -356,6 +357,28 @@ nav {
     align-items: center;
     color: white;
   }
+
+  @include cel {
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 1rem;
+    .izq {
+      padding: 4rem 0;
+    }
+    .izq,
+    .der {
+      flex: 1 0 100%;
+    }
+  }
+}
+
+#descubre {
+  background: $azulmarino;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+
   h2 {
     color: $naranja;
   }
@@ -370,19 +393,116 @@ nav {
   .conte {
     width: 70%;
   }
+}
 
-  @include cel {
-    flex-wrap: wrap;
-    border-radius: 1rem;
-    overflow: hidden;
-    text-align: center;
-    margin: 0 1rem;
-    .izq{
-      padding: 4rem 0;
+#grupos {
+  margin: 12dvh 0;
+  h2 {
+    color: $naranja;
+  }
+  p {
+    padding-top: 1rem;
+    color: $azulmarino;
+  }
+  .izq {
+    order: 2;
+  }
+  .der {
+    order: 1;
+    background: url(/fondo-bus.png) no-repeat;
+    background-size: 50% auto;
+    background-position: center;
+    img {
+      padding: 2rem;
     }
-    .izq,
-    .der {
-      flex: 1 0 100%;
+  }
+  @include cel {
+    margin: 6dvh 0 0;
+    padding: 0 2rem;
+  }
+  .der {
+    background-size: contain;
+    img {
+      padding: 0rem;
+    }
+  }
+}
+
+#cocos{
+  position: absolute;
+  top: 0;
+  left: -10%;
+  max-width: 15%;
+  height: auto;
+  @include cel {
+    
+    top: -10%;
+    max-width: 35%;
+  }
+}
+ #palma{
+  position: absolute;
+  z-index: -1;
+  top: -30%;
+  left: -10%;
+  max-width: 35%;
+  height: auto;
+  @include cel {
+    top: -20%;
+    max-width: 65%;
+  }
+}
+#contacto {
+  margin: 12dvh 0;
+  background: $fondoamarillo;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  h2 {
+    color: $naranja;
+  }
+  p,
+  li {
+    padding-top: 1rem;
+    color: $azulmarino;
+  }
+  .conte {
+    width: 70%;
+  }
+  
+  @include cel {
+    margin: 3dvh 0;
+    padding: 0 2rem;
+  }
+}
+#reservaciones {
+  margin: 10dvh 0;
+  h2 {
+    color: $naranja;
+  }
+  p {
+    padding-top: 1rem;
+    color: $azulmarino;
+  }
+  .izq {
+    position: relative;
+    border: solid;
+    
+    #flor {
+      position: absolute;
+      top: 0;
+      left: 10%;
+    }
+  }
+  img{
+    border-radius: 1rem;
+    max-width: 80%;
+  }
+  @include cel {
+    margin: 0dvh 0;
+    padding: 0rem;
+    .izq #flor {
+      top: -5%;
+      left:50%;
     }
   }
 }
