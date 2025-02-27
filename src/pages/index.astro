@@ -71,7 +71,9 @@ import Footer from "../components/Footer.astro";
             >, ideal para refrescarse y relajarse después de un día explorando
             Zihuatanejo.
           </p>
-          <Anchor url="#habitaciones" clase="oscuro" texto="Ver habitaciones" />
+          <Anchor url="#habitaciones" clase="oscuro" texto="Ver habitaciones">
+            <img src="/ico-cama.svg" alt="icono anchor" />
+          </Anchor>
         </div>
       </div>
       <div class="der">
@@ -104,10 +106,13 @@ import Footer from "../components/Footer.astro";
           >, aire acondicionado, baño privado, TV y wifi.
         </p>
         <Anchor
+          data-tipo="Habitacion ideal"
           url="#reservaciones"
           clase="oscuro reservar"
           texto="Reservar habitación"
-        />
+        >
+          <img src="/maleta-ico.svg" alt="icono anchor" />
+        </Anchor>
         <div class="maximo">
           <b>Máximo</b> 2 personas
         </div>
@@ -125,10 +130,13 @@ import Footer from "../components/Footer.astro";
           >, aire acondicionado, TV y baño privado.
         </p>
         <Anchor
+          data-tipo="Habitacion companeros"
           url="#reservaciones"
           clase="oscuro reservar"
           texto="Reservar habitación"
-        />
+        >
+          <img src="/maleta-ico.svg" alt="icono anchor" />
+        </Anchor>
         <div class="maximo">
           <b>Máximo</b> 3 personas
         </div>
@@ -146,10 +154,13 @@ import Footer from "../components/Footer.astro";
           >, aire acondicionado, TV y baño privado.
         </p>
         <Anchor
+          data-tipo="Habitacion familiar"
           url="#reservaciones"
           clase="oscuro reservar"
           texto="Reservar habitación"
-        />
+        >
+          <img src="/maleta-ico.svg" alt="icono anchor" />
+        </Anchor>
         <div class="maximo">
           <b>Máximo</b> 4 personas
         </div>
@@ -167,10 +178,13 @@ import Footer from "../components/Footer.astro";
           >, aire acondicionado, TV y baño privado.
         </p>
         <Anchor
+          data-tipo="Habitacion grupal"
           url="#reservaciones"
           clase="oscuro reservar"
           texto="Reservar habitación"
-        />
+        >
+          <img src="/maleta-ico.svg" alt="icono anchor" />
+        </Anchor>
         <div class="maximo">
           <b>Máximo</b> 6 personas
         </div>
@@ -239,7 +253,11 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
   <section class="grid pantalla-der">
-    <img src="/palma-2-hotel-manglar-zihua.jpg" alt="decoracion palma" id="palma">
+    <img
+      src="/palma-2-hotel-manglar-zihua.jpg"
+      alt="decoracion palma"
+      id="palma"
+    />
     <div id="descubre" class="barras">
       <div class="izq">
         <div class="conte">
@@ -258,8 +276,10 @@ import Footer from "../components/Footer.astro";
           <Anchor
             url="#contacto"
             clase="oscuro"
-            texto="Conoce nuestra ubicación"
-          />
+            texto="Ver nuestra ubicación"
+            >
+            <img src="/doble-check.svg" alt="icono anchor" />
+          </Anchor>
         </div>
       </div>
       <div class="der">
@@ -286,7 +306,9 @@ import Footer from "../components/Footer.astro";
             url="#reservaciones"
             clase="oscuro"
             texto="Reservar para grupos"
-          />
+            >
+            <img src="/maleta.svg" alt="icono anchor" />
+          </Anchor>
         </div>
       </div>
       <div class="der">
@@ -295,7 +317,7 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
   <section class="grid pantalla-der">
-    <img src="/cocos.png" alt="decoracion cocos" id="cocos">
+    <img src="/cocos.png" alt="decoracion cocos" id="cocos" />
     <div id="contacto" class="barras">
       <div class="izq">
         <div class="conte">
@@ -307,16 +329,16 @@ import Footer from "../components/Footer.astro";
           </p>
           <ul>
             <li>
-              <b>Escríbenos por WhatsApp</b> con tus fechas y te cotizamos sin
-              compromiso.
+              <b>Escríbenos por WhatsApp</b> con tus fechas y te cotizamos sin compromiso.
             </li>
-            <li><b>Encuéntranos fácilmente</b> en el mapa y planea tu llegada.</li>
+            <li>
+              <b>Encuéntranos fácilmente</b> en el mapa y planea tu llegada.
+            </li>
           </ul>
-          <Anchor
-            url="#reservaciones"
-            clase="claro"
-            texto="Reserva ahora"
-          />
+          <Anchor url="#reservaciones" clase="claro" texto="Reserva ahora" 
+          >
+          <img src="/maleta-ico.svg" alt="icono anchor" />
+        </Anchor>
         </div>
       </div>
       <div class="der">
@@ -324,17 +346,32 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
-
-  <section id="reservaciones" class="barras">
-    <div class="izq">
-      <img id="flor" src="/flor.png" alt="decoracion" />
-      <img src="/reservaciones.jpg" alt="reserve su habitacion en Hotel Manglar Zihuatanejo" />
-    </div>
-    <div class="der">
-      <Formulario lang="es" />
+  <section class="grid contenido">
+    <div id="reservaciones" class="barras">
+      <div class="izq">
+        <img id="flor" src="/flor.png" alt="decoracion" />
+        <img
+          src="/reservaciones.jpg"
+          alt="reserve su habitacion en Hotel Manglar Zihuatanejo"
+        />
+      </div>
+      <div class="der">
+        <Formulario lang="es" />
+      </div>
     </div>
   </section>
   <div class="grid contenido">
     <Footer />
   </div>
 </Layout>
+
+<script is:inline>
+  document.querySelectorAll(".habitacion a").forEach((link) => {
+    link.addEventListener("click", function (event) {
+      // event.preventDefault(); // Evita que el enlace recargue la página
+      const tipoSeleccionado = this.getAttribute("data-tipo"); // Obtiene el valor del atributo data-tipo
+      console.log(tipoSeleccionado);
+      document.getElementById("tipo").value = tipoSeleccionado; // Cambia la selección del select
+    });
+  });
+</script>

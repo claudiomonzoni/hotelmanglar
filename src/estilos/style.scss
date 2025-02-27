@@ -90,6 +90,12 @@ a {
   text-decoration: none;
   display: inline-block;
   color: $primario;
+  vertical-align: baseline;
+  img{
+    width: 2rem !important;
+    height: auto !important;
+    margin-right: .5rem;
+  }
 }
 nav {
   display: none;

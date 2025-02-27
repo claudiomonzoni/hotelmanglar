@@ -1,5 +1,6 @@
 ---
 interface Props {
+  data_tipo?: string;
   id?: string;
   url: string;
   clase: string;
@@ -9,7 +10,9 @@ interface Props {
 const { url, clase, texto, ...rest } = Astro.props;
 ---
 
-<a href={url} class:list={[clase,  'btn']} {...rest} set:html={texto} {...rest} />
+<a href={url} class:list={[clase,  'btn']} {...rest} set:html={texto} {...rest} >
+<slot />
+</a>
 
 <style lang="scss">
   @use "/src/estilos/variables.scss" as *;
@@ -22,6 +25,7 @@ const { url, clase, texto, ...rest } = Astro.props;
     border-radius: .9rem;
     font-weight: bold;
     margin-top: 1.5rem;
+   
     @extend .anime;
   }
 
@@ -29,12 +33,12 @@ const { url, clase, texto, ...rest } = Astro.props;
     @include anchor;
   }
   .claro {
-    border: solid 1px $acento;
+
     background: $azulmarino;
     color: white;
     &:hover {
-        color: $azulmarino;
-      background: $fondoamarillo;
+        color: white;
+      background: $naranja;
       @extend .sombra;
     }
   }
